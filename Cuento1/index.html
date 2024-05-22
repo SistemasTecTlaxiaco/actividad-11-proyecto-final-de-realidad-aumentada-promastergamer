@@ -1,0 +1,83 @@
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta aframe-injected="" name="mobile-web-app-capable" content="yes"><meta aframe-injected="" name="theme-color" content="black">
+    <script src="./index_files/aframe.min.js.descarga"></script>
+    <script src="./index_files/mindar-image-aframe.prod.js.descarga"></script>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+ </head>
+  <body>
+    <script src="script.js"></script>
+
+    <div class="example-container">
+      <div id="example-scanning-overlay" class="">
+	<div class="inner">
+	  <img src="./index_files/mark1.jpeg">
+	  <div class="scanline"></div>
+	</div>
+      </div>
+
+      <div id="overlay">
+        <button onclick="window.location.href = '../../../index.html';"> <= Regresar</button>
+      </div>
+
+      <a-scene mindar-image="imageTargetSrc: https://cdn.glitch.global/5fd08afd-0471-4c04-a0b3-3e77bf637cf6/mark1.mind?v=1715717448511; showStats: false; uiScanning: #example-scanning-overlay;" embedded="" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" inspector="" keyboard-shortcuts="" screenshot="">
+        <a-assets>
+          
+          <img id="icon-microphone" src="./index_files/microfono.png">
+
+          <a-asset-item id="avatarModel" src="https://cdn.glitch.me/51f94338-3522-425b-a068-3d15d6dede5f/TucanAnimation.glb?v=1715887558606"></a-asset-item>
+        </a-assets>
+
+        <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: 10000; objects: .clickable">
+        </a-camera>
+
+        <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0">
+
+          <a-image visible="true" id="microfono-button" class="clickable" src="#icon-microphone" position="-0.14 -0.7 0" height="0.15" width="0.15" animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate" material="" geometry=""></a-image>
+
+          <a-gltf-model id="avatar" rotation="0 0 0" position="0 -0.25 0" scale="0.2 0.2 0.2" src="#avatarModel" gltf-model="" animation-mixer></a-gltf-model>
+
+          <a-text id="text" class="clickable"
+          value="Da clic sobre el botón de microfono para probar la funcionalidad de la aplicación" color="white"
+          align="center" width="1" position="0 -1.001 0" geometry="primitive:plane; height: 0.5; width: 1.4;"
+          material="color: black; opacity: 0.5"></a-text>
+
+        </a-entity>
+      </a-scene>
+    
+    </div>
+  
+
+<div class="mindar-ui-overlay mindar-ui-loading hidden">
+  <div class="loader">
+</div></div><div class="mindar-ui-overlay mindar-ui-compatibility hidden">
+  <div class="content">
+    <h1>Failed to launch :(</h1> <!--Mensaje de fallo-->
+    <p>
+      Looks like your device/browser is not compatible.
+    </p>
+
+    <br>
+    <br>
+    <p>
+      Please try the following recommended browsers:
+    </p>
+    <p>
+      For Android device - Chrome
+    </p>
+    <p>
+      For iOS device - Safari
+    </p>
+  </div>
+</div></body></html>
